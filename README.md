@@ -1,7 +1,7 @@
 # JSEmailAutoComplete
 **Inline Autocomplete solution for html text inputs written in pure Javascript.**
 
-Originally started with https://github.com/10w042/email-autocomplete . This needed to be ported into a Vanilla JS. So I ended up rewriting it.
+Originally started with https://github.com/10w042/email-autocomplete . This needed to be ported into Vanilla JS. So I ended up rewriting it.
 
 This script also supports forms that are hidden on page load, or added to the DOM later. To load this script, first include the plugin JS:
 
