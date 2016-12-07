@@ -13,20 +13,14 @@ Or, install with Composer:
 
 	composer require noc2spam/js-email-autocomplete
 
-No jQuery needed!
-
-Example usage (basic):
+**Example usage (basic):**
 
      <script>
     	 var $elem = document.getElementById('user_email');
     	 EmailAutoComplete($elem);
     </script>
 
-
-
-Example usage (advanced):
-
- 
+**Example usage (advanced):**
 
     <script>
     	 var $elem = document.getElementById('user_email');
