@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <title>JS Auto Complete Demo</title>
+        <style>
+            body{
+                line-height: 20px;
+				font-family: 'Open Sans', sans-serif;
+            }
+			.demo-template {
+			  display: block;
+			  margin: 0 auto;
+			  width: 70%;
+			}
+			pre {
+			  background: #e1e1e1 none repeat scroll 0 0;
+			  border-left: 5px solid tomato;
+			  overflow-x: hidden;
+			  padding: 17px 20px 0;
+			}
+			h1 {
+			  font-size: 38px;
+			  font-weight: bold;
+			  margin-bottom: 43px;
+			  margin-top: 30px;
+			  text-align: center;
+			}
+			.form-row {
+			  padding: 30px 10px 0;
+			 
+			}
+			.form-row label {
+			  color: #666;
+			  display: inline-block;
+			  font-size: 18px;
+			  font-weight: bold;
+			  line-height: 34px;
+			  width: 15%;
+			}
+			 input[type="text"] {
+			  border: 1px solid #ccc;
+			  border-radius: 5px;
+			  height: 28px;
+			  padding: 2px 9px;
+			  width: 230px;
+			  font-size:17px;
+			}
+        </style>
+
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        
+        <![endif]-->
+
+    </head>
+
+    <body>
+
+
+        <div class="container">
+
+            <div class="demo-template">
+                <h1>JS AutoComplete Demo.</h1>
+
+                <div>
+
+
+                    <form method="POST">
+					<pre>
+&lt;script&gt;
+	 var elem = document.getElementById('myid');
+		EmailAutoComplete(elem);
+&lt;/script&gt;
+					</pre>
+                        <div class="form-row">
+                            <label for="myid">Default</label><input  type="text" name="email" id="myid" value="" placeholder="start typing.."/>
+                        </div>
+						<br><br>
+						<pre>
+&lt;script&gt;
+	 var $elem = document.getElementById('user_email');
+	 var options = {
+		suggClass: "custom-classname", //default: "eac-sugg". your custom classname (optional)
+		domains: ["example.com"] //additional domains (optional)
+	 };
+	 EmailAutoComplete($elem, options);
+&lt;/script&gt;
+						</pre>
+						<div class="form-row">
+                            <label for="user_email">Advanced</label><input  type="text" name="email" id="user_email" value="" placeholder="start typing.."/>
+                        </div>
+
+                    </form>
+                </div>
+
+
+            </div>
+        </div><!-- /.container -->
+
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="../dist/js-email-autocompletemin.js"></script>
+        <!-- <script src="../dev/js-email-autocomplete.js"></script> -->
+      
+        <script>
+             var elem = document.getElementById('myid');
+             EmailAutoComplete(elem);
+        </script>
+		
+		 <script>
+			 var $elem = document.getElementById('user_email');
+			 var options = {
+				suggClass: "custom-classname", //default: "eac-sugg". your custom classname (optional)
+				domains: ["example.com"] //additional domains (optional)
+			 };
+			 EmailAutoComplete($elem, options);
+		</script>
+
+    </body>
+</html>
