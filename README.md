@@ -6,7 +6,12 @@ Originally started with https://github.com/10w042/email-autocomplete . This need
 This script also supports forms that are hidden on page load, or added to the DOM later. To load this script, first include the plugin JS:
 
 
-<script src="dist/js-email-autocomplete.js"></script>
+	<script src="dist/js-email-autocomplete.js"></script>
+
+
+Or, install with Composer:
+
+	composer require noc2spam/js-email-autocomplete
 
 No jQuery needed!
 
