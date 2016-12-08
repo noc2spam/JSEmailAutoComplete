@@ -268,7 +268,7 @@ var EmailAutoComplete = function(elem, options) {
             return false;
         }
         $suggOverlay = document.createElement("span");
-        var slh = parseInt(getComputedStyle($field).lineHeight);
+        var slh = parseFloat(getComputedStyle($wrap).height);
         $suggOverlay.classList.add(options.suggClass);
         $suggOverlay.style.display = 'block';
         $suggOverlay.style.boxSizing = 'content-box';
