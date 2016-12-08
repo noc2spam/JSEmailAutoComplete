@@ -12,46 +12,46 @@
         <style>
             body{
                 line-height: 20px;
-				font-family: 'Open Sans', sans-serif;
+                font-family: 'Open Sans', sans-serif;
             }
-			.demo-template {
-			  display: block;
-			  margin: 0 auto;
-			  width: 70%;
-			}
-			pre {
-			  background: #e1e1e1 none repeat scroll 0 0;
-			  border-left: 5px solid tomato;
-			  overflow-x: hidden;
-			  padding: 17px 20px 0;
-			}
-			h1 {
-			  font-size: 38px;
-			  font-weight: bold;
-			  margin-bottom: 43px;
-			  margin-top: 30px;
-			  text-align: center;
-			}
-			.form-row {
-			  padding: 30px 10px 0;
-			 
-			}
-			.form-row label {
-			  color: #666;
-			  display: inline-block;
-			  font-size: 18px;
-			  font-weight: bold;
-			  line-height: 34px;
-			  width: 15%;
-			}
-			 input[type="text"] {
-			  border: 1px solid #ccc;
-			  border-radius: 5px;
-			  height: 28px;
-			  padding: 2px 9px;
-			  width: 230px;
-			  font-size:17px;
-			}
+            .demo-template {
+                display: block;
+                margin: 0 auto;
+                width: 70%;
+            }
+            pre {
+                background: #e1e1e1 none repeat scroll 0 0;
+                border-left: 5px solid tomato;
+                overflow-x: hidden;
+                padding: 17px 20px 0;
+            }
+            h1 {
+                font-size: 38px;
+                font-weight: bold;
+                margin-bottom: 43px;
+                margin-top: 30px;
+                text-align: center;
+            }
+            .form-row {
+                padding: 30px 10px 0;
+
+            }
+            .form-row label {
+                color: #666;
+                display: inline-block;
+                font-size: 18px;
+                font-weight: bold;
+                line-height: 34px;
+                width: 15%;
+            }
+            input[type="text"] {
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                height: 28px;
+                padding: 2px 9px;
+                width: 230px;
+                font-size:17px;
+            }
         </style>
 
 
@@ -76,17 +76,17 @@
 
 
                     <form method="POST">
-					<pre>
+                        <pre>
 &lt;script&gt;
 	 var elem = document.getElementById('myid');
 		EmailAutoComplete(elem);
 &lt;/script&gt;
-					</pre>
+                        </pre>
                         <div class="form-row">
                             <label for="myid">Default</label><input  type="text" name="email" id="myid" value="" placeholder="start typing.."/>
                         </div>
-						<br><br>
-						<pre>
+                        <br><br>
+                        <pre>
 &lt;script&gt;
 	 var $elem = document.getElementById('user_email');
 	 var options = {
@@ -95,8 +95,8 @@
 	 };
 	 EmailAutoComplete($elem, options);
 &lt;/script&gt;
-						</pre>
-						<div class="form-row">
+                        </pre>
+                        <div class="form-row">
                             <label for="user_email">Advanced</label><input  type="text" name="email" id="user_email" value="" placeholder="start typing.."/>
                         </div>
 
@@ -108,22 +108,22 @@
         </div><!-- /.container -->
 
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="../dist/js-email-autocomplete.min.js"></script>
-        <!-- <script src="../dev/js-email-autocomplete.js"></script> -->
-      
+        <!--<script src="../dist/js-email-autocomplete.min.js"></script>-->
+         <script src="../dev/js-email-autocomplete.js"></script> 
+
         <script>
-             var elem = document.getElementById('myid');
-             EmailAutoComplete(elem);
+            var elem = document.getElementById('myid');
+            EmailAutoComplete(elem);
         </script>
-		
-		 <script>
-			 var $elem = document.getElementById('user_email');
-			 var options = {
-				suggClass: "custom-classname", //default: "eac-sugg". your custom classname (optional)
-				domains: ["example.com"] //additional domains (optional)
-			 };
-			 EmailAutoComplete($elem, options);
-		</script>
+
+        <script>
+            var $elem = document.getElementById('user_email');
+            var options = {
+                suggClass: "custom-classname", //default: "eac-sugg". your custom classname (optional)
+                domains: ["example.com"] //additional domains (optional)
+            };
+            EmailAutoComplete($elem, options);
+        </script>
 
     </body>
 </html>
