@@ -263,6 +263,7 @@ var EmailAutoComplete = function(elem, options) {
         insertAfter($field, $cval);
         $cval.style.fontSize = getComputedStyle($field).fontSize;
         $cval.style.paddingLeft = getComputedStyle($field).paddingLeft;
+		$cval.style.lineHeight = getComputedStyle($field).lineHeight;
         var c = (parseFloat(outerHght($field)) - parseFloat(getComputedStyle($field).height)) / 2;
         if (isNaN(c)) {
             return false;
