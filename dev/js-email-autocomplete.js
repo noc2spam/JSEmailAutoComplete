@@ -326,7 +326,6 @@ var EmailAutoComplete = function (elem, options) {
             var $wrap = document.createElement("div");
             document.body.setAttribute("tabindex", 1);
             $wrap.classList.add('eac-input-wrap');
-            console.log(getDisplayType($field));
             $wrap.style.display = getDisplayType($field);
             $wrap.style.position = getComputedStyle($field).position === 'static' ? 'relative' : getComputedStyle($field).position;
             $wrap.style.fontSize = getComputedStyle($field).fontSize;
@@ -348,6 +347,7 @@ var EmailAutoComplete = function (elem, options) {
         var $cval = document.createElement("span");
         $cval.classList.add('eac-cval');
         $field.style.position = "absolute";
+		$field.style.left = "0px";
         $cval.style.visibility = 'hidden';
         $cval.style.position = 'absolute';
         $cval.style.display = 'inline-block';
@@ -361,14 +361,11 @@ var EmailAutoComplete = function (elem, options) {
         if (isNaN(c)) {
             return false;
         }
-       
-        console.log(c);
         var $suggOverlay = document.createElement("span");
         var slh = parseInt(getComputedStyle($field).lineHeight);
         $suggOverlay.classList.add(options.suggClass);
         $suggOverlay.style.display = 'block';
-        $suggOverlay.style.boxSizing = 'content-box';
-        
+        $suggOverlay.style.boxSizing = 'content-box';        
         $suggOverlay.style.lineHeight = slh + "px";
         $suggOverlay.style.fontFamily = getComputedStyle($field).fontFamily;
         $suggOverlay.style.fontWeight = getComputedStyle($field).fontWeight;
@@ -382,21 +379,18 @@ var EmailAutoComplete = function (elem, options) {
         addEvent($field, 'keyup', function (e) {
             displaySuggestion(e);
         });
-        addEvent($field, 'keydown', function (a) {
-			
+        addEvent($field, 'keydown', function (a) {			
             if (39 === a.which || 9 === a.which) {
                 autocomplete($field);
             }
         });
         addEvent(document, 'click', function (a) {
-return;
             if (a.target.className === options.suggClass) {
                 $field.value += $suggOverlay.innerHTML;
                 $suggOverlay.innerHTML = "";
             }
         });
         addEvent($field, 'blur', function (a) {
-return;
             setTimeout(function () {
                 $suggOverlay.innerHTML = "";
             }, 150);
