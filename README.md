@@ -1,5 +1,5 @@
-# JSEmailAutoComplete
-**Inline Autocomplete solution for html text inputs written in pure Javascript.**
+# Javascript Email AutoComplete
+**Inline email auto-complete solution for html text inputs written in pure Javascript.**
 
 Originally started with https://github.com/10w042/email-autocomplete . This needed to be ported into Vanilla JS. So I ended up rewriting it.
 

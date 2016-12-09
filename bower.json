@@ -1,0 +1,24 @@
+{
+  "name": "js-email-autocomplete",
+  "homepage": "https://github.com/noc2spam/JSEmailAutoComplete",
+  "authors": [
+    "gogol <thcdesigning@gmail.com>"
+  ],
+  "description": "inline email auto-complete solution written in Pure Javascript.",
+  "main": "dev/js-email-autocomplete.js",
+  "keywords": [
+    "autocomplete",
+    "email",
+    "prefill",
+    "mail",
+    "domain"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
