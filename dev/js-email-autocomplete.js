@@ -381,14 +381,12 @@ var EmailAutoComplete = function (elem, options) {
             }
         });
         addEvent(document, 'click', function (a) {
-return;
             if (a.target.className === options.suggClass) {
                 $field.value += $suggOverlay.innerHTML;
                 $suggOverlay.innerHTML = "";
             }
         });
         addEvent($field, 'blur', function (a) {
-return;
             setTimeout(function () {
                 $suggOverlay.innerHTML = "";
             }, 150);
