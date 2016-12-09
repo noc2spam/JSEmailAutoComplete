@@ -377,6 +377,9 @@ var EmailAutoComplete = function (elem, options) {
         addEvent($field, 'keydown', function (a) {
 			
             if (39 === a.which || 9 === a.which) {
+				if($suggOverlay.innerHTML != ""){
+					a.preventDefault();
+				}
                 autocomplete($field);
             }
         });
