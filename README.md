@@ -25,9 +25,10 @@ Or, install with Composer:
     <script>
     	 var $elem = document.getElementById('user_email');
     	 var options = {
-    		suggClass: "custom-classname", //default: "eac-sugg". your custom classname (optional)
-    		domains: ["example.com"] //additional domains (optional)
-    	 };
+				suggOpacity: "0.9",
+				suggClass: "custom-classname", //default: "eac-sugg". your custom classname (optional)
+				domains: ["example.com"] //additional domains (optional)
+			 };
     	 EmailAutoComplete($elem, options);
     </script>
 
