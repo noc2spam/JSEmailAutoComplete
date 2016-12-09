@@ -77,12 +77,6 @@ var EmailAutoComplete = function (elem, options) {
                         element.querySelectorAll(selector)
                         );
     }
-    function outerWidth(el) {
-        var width = el.offsetWidth;
-        var style = getComputedStyle(el);
-        width += parseInt(style.marginLeft) + parseInt(style.marginRight);
-        return width;
-    }
     function hasClass(target, className) {
         return new RegExp('(\\s|^)' + className + '(\\s|$)').test(target.className);
     }
@@ -318,20 +312,19 @@ var EmailAutoComplete = function (elem, options) {
         var val = null;
         var suggestion = null;
         var $field = elem;
-        if ($field.length < 1) {
-            console.log('field cannot be blank.');
+        if ($field === null || $field.length < 1) {
+            throw new Error('field cannot be blank.');
             return false;
         }
         if (!hasClass($field.parentNode, 'eac-input-wrap')) {
             var $wrap = document.createElement("div");
             document.body.setAttribute("tabindex", 1);
             $wrap.classList.add('eac-input-wrap');
-            console.log(getDisplayType($field));
             $wrap.style.display = getDisplayType($field);
             $wrap.style.position = getComputedStyle($field).position === 'static' ? 'relative' : getComputedStyle($field).position;
             $wrap.style.fontSize = getComputedStyle($field).fontSize;
-            $wrap.style.width = getComputedStyle($field).width;
-            $wrap.style.height = getComputedStyle($field).height;
+            $wrap.style.width = getOuterWidth($field) + "px";
+			$wrap.style.height = getOuterHeight($field) + "px";
             wrap($field, $wrap);
         } else {
             var $wrap = $field.parentNode;
@@ -357,19 +350,18 @@ var EmailAutoComplete = function (elem, options) {
         insertAfter($field, $cval);
 		$cval.style.fontSize = getComputedStyle($field).fontSize;
 		$cval.style.paddingLeft = getComputedStyle($field).paddingLeft;
-        var c = (parseFloat(outerHght($field)) - parseFloat(getComputedStyle($field).height)) / 2;
+        var c = (parseFloat(getOuterHeight($field)) - parseFloat(getComputedStyle($field).height)) / 2;
         if (isNaN(c)) {
             return false;
         }
        
-        console.log(c);
         var $suggOverlay = document.createElement("span");
-        var slh = parseInt(getComputedStyle($field).lineHeight);
         $suggOverlay.classList.add(options.suggClass);
         $suggOverlay.style.display = 'block';
         $suggOverlay.style.boxSizing = 'content-box';
         
-        $suggOverlay.style.lineHeight = slh + "px";
+        $suggOverlay.style.lineHeight = getOuterHeight($field) + "px";
+        $suggOverlay.style.height = getOuterHeight($field) + "px";
         $suggOverlay.style.fontFamily = getComputedStyle($field).fontFamily;
         $suggOverlay.style.fontWeight = getComputedStyle($field).fontWeight;
         $suggOverlay.style.letterSpacing = getComputedStyle($field).letterSpacing;
@@ -421,9 +413,9 @@ return;
             suggestion.length ? e.preventDefault() : $suggOverlay.innerHTML = "";
             $suggOverlay.innerHTML = suggestion;
             $cval.innerHTML = val;
-            null === fieldLeftOffset && (fieldLeftOffset = (outerWidth($field) - $field.offsetWidth) / 2);
+            null === fieldLeftOffset && (fieldLeftOffset = (getOuterWidth($field) - $field.offsetWidth) / 2);
             var b = $cval.offsetWidth;
-            outerWidth($field) > b && ($suggOverlay.style.left = fieldLeftOffset + b + "px");
+            getOuterWidth($field) > b && ($suggOverlay.style.left = fieldLeftOffset + b + "px");
         }
         function suggest(a) {
             var b = a.split("@");
@@ -436,17 +428,18 @@ return;
             }).shift() || "";
             return c.replace(a, "")
         }
-        function outerHght(elem) {
-            var curStyle = elem.currentStyle || window.getComputedStyle(elem);
-            OH = elem.offsetHeight;
-            if (!isNaN(parseInt(curStyle.marginTop))) {
-                OH += parseInt(curStyle.marginTop);
-            }
-            if (!isNaN(parseInt(curStyle.marginBottom))) {
-                OH += parseInt(curStyle.marginBottom)
-            }
-            return OH;
+        
+		function getOuterWidth($elem) {
+                var cwidth = parseFloat(getComputedStyle($elem).width);
+                var rwidth = parseFloat($elem.getBoundingClientRect().width);
+                return cwidth > rwidth ? cwidth : rwidth;
         }
+
+		function getOuterHeight($elem) {
+			var cheight = parseFloat(getComputedStyle($elem).height);
+			var rheight = parseFloat($elem.getBoundingClientRect().height);
+			return cheight > rheight ? cheight : rheight;
+		}
     }
     /* end init()*/
     init();
