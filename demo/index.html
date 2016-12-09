@@ -93,6 +93,7 @@
 	 var $elem = document.getElementById('user_email');
 	 var options = {
 		suggClass: "custom-classname", //default: "eac-sugg". your custom classname (optional)
+		suggOpacity: "0.9", // opacity of the suggested text (optional)
 		domains: ["example.com"] //additional domains (optional)
 	 };
 	 EmailAutoComplete($elem, options);
@@ -120,6 +121,7 @@
 		 <script>
 			 var $elem = document.getElementById('user_email');
 			 var options = {
+				suggOpacity: "0.9",
 				suggClass: "custom-classname", //default: "eac-sugg". your custom classname (optional)
 				domains: ["example.com"] //additional domains (optional)
 			 };

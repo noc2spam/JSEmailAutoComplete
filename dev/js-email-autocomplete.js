@@ -32,6 +32,7 @@
 var EmailAutoComplete = function (elem, options) {
     var defaults = {
         suggClass: "eac-sugg",
+		suggOpacity: "0.7",
         domains: ["yahoo.com", "hotmail.com", "gmail.com", "me.com", "aol.com", "mac.com", "live.com", "comcast.net", "googlemail.com", "msn.com", "hotmail.co.uk", "yahoo.co.uk", "facebook.com", "verizon.net", "sbcglobal.net", "att.net", "gmx.com", "outlook.com", "icloud.com"]
     };
     /* extend */
@@ -366,7 +367,7 @@ var EmailAutoComplete = function (elem, options) {
         $suggOverlay.style.fontWeight = getComputedStyle($field).fontWeight;
         $suggOverlay.style.letterSpacing = getComputedStyle($field).letterSpacing;
         $suggOverlay.style.position = 'absolute';
-        $suggOverlay.style.opacity = '0.4';
+        $suggOverlay.style.opacity = options.suggOpacity;
         $suggOverlay.style.top = 0;
         $suggOverlay.style.left = 0;
         $suggOverlay.style.zIndex = 99999;
