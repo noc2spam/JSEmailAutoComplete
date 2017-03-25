@@ -9,10 +9,6 @@ This script also supports forms that are hidden on page load, or added to the DO
 	<script src="dist/js-email-autocomplete.js"></script>
 
 
-Or, install with Composer:
-
-	composer require noc2spam/js-email-autocomplete
-
 **Example usage (basic):**
 
      <script>
