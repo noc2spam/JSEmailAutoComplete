@@ -31,4 +31,5 @@ This script also supports forms that are hidden on page load, or added to the DO
 
 **Offtopic, Buy me a coffee?? :p**
 
-btw wallet: 1NjP2gnr6yvT96mRVEXNt3X1iSSKSQGFag
+My btc wallet: 1NjP2gnr6yvT96mRVEXNt3X1iSSKSQGFag
+
